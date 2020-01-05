@@ -1,6 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
 
+
+
 // Initialize app variable with express 
 const app = express();
 
