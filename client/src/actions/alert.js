@@ -6,7 +6,7 @@ import uuid from 'uuid';
 // dispatch the type of set alert to the reducer 
 
 export const setAlert = (msg, alertType, timeout = 5000) => dispatch => {
-    //Get a unique id
+    // Get a unique id
     const id = uuid.v4();
     dispatch({
         type: SET_ALERT,
