@@ -5,8 +5,10 @@ const { check, validationResult } = require("express-validator");
 const request = require('request');
 const config = require('config');
 
+
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
+const Post = require("../../models/Post");
 
 // @route    GET api/profile/me
 // @desc     Get the current user's profile
@@ -250,8 +252,11 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 // @access   Private
 router.delete('/', auth , async (req, res) => {
     try {
-        // @todo - remove users posts
-        // Remove urofile 
+        // Remove users posts
+        //
+        await Post.deleteMany({ user: req.user.id });
+
+        // Remove profile 
         await Profile.findOneAndRemove(({user: req.user.id }));
         // Remove user
         await User.findOneAndRemove({_id: req.user.id });
