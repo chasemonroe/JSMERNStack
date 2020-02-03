@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://Chase:Itsecurity55@merndb-h0ihd.gcp.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "d0e4310b75e91b50b5db",
+    "githubSecret": "b9de98b2b2a670951d4fcc230c4a813017537f37"
+}
